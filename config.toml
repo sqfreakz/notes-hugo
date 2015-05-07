@@ -1,0 +1,26 @@
+contentdir = "content"
+layoutdir = "layouts"
+publishdir = "public"
+
+builddrafts = false
+
+baseurl = "http://sqfreakz.github.io/"
+MetaDataFormat = "yaml"
+canonifyurls = true
+pluralizelisttitles= false
+
+[permalinks]
+  catatan = "catatan/:year/:month/:title/"
+  fixed = ":title/"
+
+[params]
+  Description = "Blog yang saya buat dengan Hugo"
+  Author = "Amiruddin"
+  Title = "Freakznotes"
+  Tagline = "Catatan aneh :p"
+  DateForm = "2 Jan 2006"
+
+[taxonomies]
+  tag = "Tags"
+  group = "Groups"
+  category = "Kategori"

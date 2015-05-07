@@ -1,0 +1,30 @@
+<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Ini adalah blog <a href="http://sqfreakz.github.io" target="_blank">SQFreaKz</a>. Dibuat oleh <a href="https://twitter.com/dinodein" target="_blank">@dinodein</a>.
+      Menggunakan <a href='http://gohugo.io'>Hugo</a></p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item {{ if eq .Url "/" }} active {{ end }}" href="/">Beranda</a>
+    <a class="sidebar-nav-item {{ if eq .Url "/catatan" }} active {{ end }}" href="/catatan">Catatan</a>
+    {{ $thisperma := .Permalink }}
+    {{ range .Site.Recent.ByWeight }}
+      {{ if isset .Params "sidebar" }}
+        <a class="sidebar-nav-item {{ if eq .Permalink $thisperma }} active {{ end }}" href="{{ .Permalink }}">{{ .Title }}</a>
+      {{ end }}
+    {{ end }}
+
+    <!-- <a class="sidebar-nav-item" href="{{ .Site.Params.Github.Url }}/archive/{{ .Site.Params.Github.Head }}.zip">Download</a> -->
+    <!-- <a class="sidebar-nav-item" href="{{ .Site.Params.Github.Url }}">GitHub project</a>
+    <span class="sidebar-nav-item">Currently on {{ .Site.Params.Github.Head }}</span> -->
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy;<a href='http://sqfreakz.github.io'> SQFreaKz </a> {{ .Site.LastChange.Year }}.</p>
+  </div>
+</div>
